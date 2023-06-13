@@ -1,0 +1,254 @@
+@import '../../../user-registration-pro/assets/css/variables/variables';
+
+.user-registration-pro-dashboard {
+	& *,
+	&::before,
+	&::after {
+		box-sizing: border-box;
+	}
+}
+
+.user-registration-pro-registration-overview-chart-report-legends,
+.user-registration-pro-specific-form-registration-overview-chart-report-legends {
+	ul {
+		li {
+			display: flex;
+			align-items: center;
+			margin-right: 10px;
+			background: #eee;
+			padding: 4px 8px;
+			word-break: break-all;
+			border-radius: 20px;
+
+			.user-registration-pro-color-tag {
+				display: block;
+				width: 10px;
+				height: 10px;
+				flex: 0 0 10px;
+				border-radius: 10px;
+				margin-right: 5px;
+			}
+		}
+	}
+}
+
+.column-shortcode {
+	width: 280px;
+}
+
+.ur_conditional_logic_wrapper {
+	margin-bottom: 2rem;
+	.ur-conditional-wrapper {
+		display: flex;
+
+		.ur-conditional-condition {
+			margin: 0 16px;
+		}
+	}
+}
+.ur-check {
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	margin-left: -9px;
+	label {
+		margin: 0 8px;
+	}
+}
+
+.ur_addons_wrap {
+	.ur-plugin-card-bottom {
+		padding: 10px;
+		background: white;
+		height: 50px;
+
+		.status {
+			text-align: left;
+			float: left;
+			clear: left;
+			width: 65%;
+			padding-top: 5px;
+			width: calc(100% - 180px);
+
+			span.status-label {
+				color: #666;
+
+				&.status-active {
+					color: #2a9b39;
+				}
+
+				&.status-inactive {
+					color: #a00;
+				}
+			}
+		}
+
+		.action-buttons {
+			float: right;
+			clear: right;
+			max-width: 180px;
+
+			a {
+				min-height: 0px;
+			}
+
+			&.upgrade-plan {
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+@font-face {
+	font-family: 'UserRegistration';
+	src:  url('../fonts/UserRegistration.eot?v5p6f');
+	src:  url('../fonts/UserRegistration.eot?v5p6f#iefix') format('embedded-opentype'),
+	  url('../fonts/UserRegistration.ttf?v5p6f') format('truetype'),
+	  url('../fonts/UserRegistration.woff?v5p6f') format('woff'),
+	  url('../fonts/UserRegistration.svg?v5p6f#UserRegistration') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+  }
+
+#elementor-editor-wrapper .ur-icon-user-registration:before,
+.elementor-edit-area .ur-icon-user-registration:before {
+	content: '\e031';
+	font-family: 'UserRegistration';
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+.ur-pro-field-mapping-box {
+	margin: 0 0 8px;
+
+	.ur-pro-external-field-map-group {
+		display: flex;
+		align-items: center;
+		padding: 8px;
+		border-radius: 4px;
+		background: $color_gray_five;
+
+		.ur-pro-external-field-map-form-group {
+			flex: 1;
+		}
+
+		.ur-pro-operator {
+			width: 120px;
+			margin: 0 8px;
+			text-align: center;
+		}
+
+		.ur-pro-value {
+			flex: 1;
+			margin-right: 8px;
+		}
+
+		.add {
+			padding: 8px;
+			max-width: inherit;
+			flex: 0 0 auto;
+		}
+
+		.remove {
+			&:hover {
+				background: $red;
+				border-color: $red;
+				color: $white;
+			}
+		}
+	}
+}
+
+.ur-grid-lists {
+	.ur-grid-list-item {
+		.ur-label {
+			.ur-portal-tooltip {
+				margin-left: 2px;
+				font-size: 16px;
+				top: 3px;
+			}
+		}
+	}
+}
+
+.ur-export-custom-fields{
+	p {
+		font-weight: bold;
+	}
+
+	.ur-form-fields-container {
+		max-height: 200px;
+		overflow-y: auto;
+	}
+}
+
+// Bulk Options CSS.
+.ur-toggle-content {
+	.ur-general-setting {
+		&.ur-setting-checkbox,
+		&.ur-setting-radio,
+		&.ur-setting-select {
+			label {
+				&[for=ur-type-radio],
+				&[for=ur-type-checkbox],
+				&[for=ur-type-select] {
+					margin-bottom: 18px;
+
+					.ur-toggle-bulk-options {
+						float: right;
+						margin-top: 3px;
+						color: #2271b1;
+						transition-duration: .05s;
+						transition-timing-function: ease-in-out;
+
+						&:focus {
+							box-shadow: none;
+						}
+					}
+
+					.ur-toggle-bulk-options:hover {
+						color: #135e96;
+					}
+				}
+
+				&[for=ur-type-textarea] {
+					display: flex;
+					align-items: center;
+					gap: .4em;
+
+					.ur-portal-tooltip {
+						&::after {
+							line-height: unset;
+						}
+					}
+				}
+			}
+
+			// Bulk option with background and top arrow css
+			> .ur-bulk-options-container {
+				padding: 8px 12px 13px;
+				border-radius: 6px;
+				position: relative;
+				background: #f3f3f3;
+
+				&::after {
+					content: "";
+					position: absolute;
+					border-bottom: 15px solid #f3f3f3;
+					border-right: 10px solid transparent;
+					border-left: 10px solid transparent;
+					top: -13px;
+					right: 18px;
+				}
+
+				.ur-setting-textarea {
+					margin-top: 10px;
+					margin-bottom: 12px;
+					padding: 0;
+				}
+			}
+		}				
+	}		
+}

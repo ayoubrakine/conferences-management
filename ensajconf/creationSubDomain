@@ -1,0 +1,189 @@
+<?php
+//Generation automatique de mot de passe  
+function generatePassword()
+{
+  $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  $password = '';
+  for ($i = 0; $i < 8; $i++) {
+    $password .= $chars[rand(0, strlen($chars) - 1)];
+  }
+  return $password;
+}
+require 'C:/xampp/htdocs/ensajconf/sendmail.php';
+
+if (isset($_POST['wpforms']['id']) && $_POST['wpforms']['id'] == 8) {
+////////////////////////////////////////////////////////////////////////////////////////
+/////////////////// Recuperation des donnees depuis le formulaire //////////////////////
+  global $wpdb;
+  $form_id = 8;
+  $results = $wpdb->get_results("SELECT entry_id, fields FROM wp_wpforms_entries WHERE 
+    form_id = $form_id ORDER BY entry_id DESC LIMIT 1");
+  if (!empty($results)) {
+    $result = $results[0];
+    $fields = json_decode($result->fields, true);
+    $title = $fields['14']['value'];
+    $start_date = date('Y-m-d', strtotime($fields['20']['value']));
+    $end_date = date('Y-m-d', strtotime($fields['21']['value']));
+    $email = $fields['60']['value'];
+    $nbr_people = $fields['27']['value'];
+    $username = $fields['14']['value'];
+    $password = generatePassword();
+    $url = "" . $title . ".isivc.com ";
+  }
+
+  //creation du dossier qui va contenir wordpress dans htdocs
+  $new_folder = 'C:/xampp/htdocs/' . $title;
+  if (!file_exists($new_folder)) {
+    mkdir($new_folder, 0777, true);
+  }
+  $chemin_dossier_source = 'C:\wordpress';
+  copy_dir($chemin_dossier_source, $new_folder);
+
+  // creation d'un nouveau virtualhost
+  $apache_config = "
+<VirtualHost *:80>
+  ServerName " . $title . ".isivc.com
+  DocumentRoot \"$new_folder\"
+  <Directory \"$new_folder\">
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+  </Directory>
+</VirtualHost>\n";
+  file_put_contents('C:\xampp\apache\conf\extra\httpd-vhosts.conf', $apache_config, 
+  FILE_APPEND | LOCK_EX);
+
+  //cration du l'entree DNS
+  $line_to_add = "127.0.0.1   " . $title . ".isivc.com\n";
+  file_put_contents('C:\Windows\System32\drivers\etc\hosts', $line_to_add, FILE_APPEND 
+  | LOCK_EX);
+
+//////////////////////////////////////////////////////////////////////////
+////////////// configuration de la base de donnees wordpress /////////////
+// Informations de la base de données
+  $db_name = $title;
+  $db_user = 'root';
+  $db_password = '';
+  $db_host = 'localhost';
+
+  //creation de la base de donnees
+  $pdo = new PDO("mysql:host=$db_host", $db_user, $db_password);
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $pdo->exec("CREATE DATABASE $db_name");
+
+  // Nom du fichier de configuration
+  $config_file = 'C:/xampp/htdocs/' . $title . '/wp-config.php';
+
+  
+//Ajouter la nouvelle conference dans la table conferences
+  $mysqli = new mysqli("localhost", "root", "", "ensajconf");
+  // Vérifier la connexion
+  if ($mysqli->connect_errno) {
+    echo "Failed to connect to MySQL: " . $mysqli->connect_error;
+    exit();
+  }
+  // Préparer la requête d'insertion
+  $link = 'http://' . $url;
+  $sql = "INSERT INTO `conferences` (`title`,`start_date`,`end_date`, `email`, `nbr_people`,
+  `username`,`password`,`url`) VALUES 
+     ('$title','$start_date','$end_date', '$email', '$nbr_people','$username','$password',
+     '$link')";
+  // Exécuter la requête d'insertion
+  if ($mysqli->query($sql) === TRUE) {
+    echo "Nouvelle ligne insérée avec succès.";
+  } else {
+    echo "Erreur d'insertion: " . $mysqli->error;
+  }
+  // Fermer la connexion
+  $mysqli->close();
+
+  // Vérifier si le fichier existe
+  if (!file_exists($config_file)) {
+    // Créer le fichier
+    file_put_contents($config_file, '');
+    // Ajouter les informations de configuration
+    $config_data = "<?php\n";
+    $config_data .= "define('DB_NAME', '{$db_name}');\n";
+    $config_data .= "define('DB_USER', '{$db_user}');\n";
+    $config_data .= "define('DB_PASSWORD', '{$db_password}');\n";
+    $config_data .= "define('DB_HOST', '{$db_host}');\n";
+    $config_data .= "define('DB_CHARSET', 'utf8mb4');\n";
+    $config_data .= "define('DB_COLLATE', '');\n";
+    $config_data .= "define('AUTH_KEY',         'votre_auth_key');\n";
+    $config_data .= "define('SECURE_AUTH_KEY',  'votre_secure_auth_key');\n";
+    $config_data .= "define('LOGGED_IN_KEY',    'votre_logged_in_key');\n";
+    $config_data .= "define('NONCE_KEY',        'votre_nonce_key');\n";
+    $config_data .= "define('AUTH_SALT',        'votre_auth_salt');\n";
+    $config_data .= "define('SECURE_AUTH_SALT', 'votre_secure_auth_salt');\n";
+    $config_data .= "define('LOGGED_IN_SALT',   'votre_logged_in_salt');\n";
+    $config_data .= "define('NONCE_SALT',       'votre_nonce_salt');\n";
+    $config_data .= "\$table_prefix = 'wp_';\n";
+    $config_data .= "define('WP_DEBUG', false);\n";
+    $config_data .= "if ( !defined('ABSPATH') )\n";
+    $config_data .= "    define('ABSPATH', dirname(_FILE_) . '/');\n";
+    $config_data .= "require_once(ABSPATH . 'wp-settings.php');\n";
+    file_put_contents($config_file, $config_data);
+  }
+ 
+/////////////////////////////////////////////////////////////////////////
+/////////////// installation automatique ////////////////////////////////
+  $install_file = 'C:/xampp/htdocs/' . $title . '/installation.php';
+  file_put_contents($install_file, '');
+  $install_data = "<?php\n";
+  $install_data .= "define('WP_INSTALLING', true);\n";
+  $install_data .= "require_once('C:/xampp/htdocs/{$title}/wp-load.php');\n";
+  $install_data .= "require_once('C:/xampp/htdocs/{$title}/wp-admin/includes/upgrade.php');
+  \n";
+  $install_data .= "\$site_title = '{$title}';\n";
+  $install_data .= "\$admin_username = '{$username}';\n";
+  $install_data .= "\$admin_password = '{$password}';\n";
+  $install_data .= "\$admin_email = '{$email}';\n";
+  $install_data .= "\$path = 'C:/xampp/htdocs/{$title}';\n";
+  $install_data .= "\$install = wp_install(\$site_title, \$admin_username, \$admin_email, 
+  true, '', \$admin_password, null, array(\n";
+  $install_data .= "    'public' => true,\n";
+  $install_data .= "'admin_email' => \$admin_email,\n";
+  $install_data .= "'blog_public' => true,\n";
+  $install_data .= "), array(\n";
+  $install_data .= "'ABSPATH' => \$path . '/',\n";
+  $install_data .= "'WP_CONTENT_DIR' => \$path . '/wp-content',\n";
+  $install_data .= "'WP_PLUGIN_DIR' => \$path . '/wp-content/plugins',\n";
+  $install_data .= "));\n";
+  $install_data .= "if (is_wp_error(\$install)) {\n";
+  $install_data .= "echo 'Erreur lors de l\'installation de WordPress: ' . \$install->
+  get_error_message();\n";
+  $install_data .= "} else {\n";
+  $install_data .= "header(\"Location: http://isivc.com/endcreation\");\n";
+  $install_data .= "}\n";
+  $install_data .= "?>\n";
+  $install_data .= "<style>\n
+.container {\n
+  width: 50%;\n
+  margin: auto;\n
+  border-radius: 10px;\n
+  border: 2px solid #ccc;\n
+  box-shadow: 2px 2px 5px #888888;\n
+  padding: 20px;\n
+  text-align: center;\n
+  margin-top: 280px;\n
+}\n
+button {\n
+  background-color: #4175fc;\n
+  color: white;\n
+  padding: 10px 20px;\n
+  border: none;\n
+  border-radius: 5px;\n
+  cursor: pointer;\n
+  font-size: 20;\n
+}\n
+p {\n
+    font-weight: 300;\n
+    font-size: 20;\n
+    font-family: Arial, sans-serif;	\n
+}\n
+</style>\n";
+  file_put_contents($install_file, $install_data);
+  sendMail($title, $email, $username, $password, $url);
+  header("Location: http://localhost/{$title}/installation.php");
+}
+?>

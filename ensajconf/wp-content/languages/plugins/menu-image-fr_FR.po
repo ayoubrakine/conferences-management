@@ -1,0 +1,92 @@
+# Translation of Plugins - Menu Image, Icons made easy - Stable (latest release) in French (France)
+# This file is distributed under the same license as the Plugins - Menu Image, Icons made easy - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2022-03-03 17:30:22+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/3.0.0-alpha.2\n"
+"Language: fr\n"
+"Project-Id-Version: Plugins - Menu Image, Icons made easy - Stable (latest release)\n"
+
+#: menu-image.php:623 menu-image.php:1159 menu-image.php:1716
+msgid "Image"
+msgstr "Image"
+
+#: menu-image.php:1114
+msgid "Chose menu image"
+msgstr "Choisir une image de menu"
+
+#: menu-image.php:1160
+msgid "Set menu item image"
+msgstr "Choisir une image"
+
+#: menu-image.php:1170
+msgid "Set image"
+msgstr "Choisir une image"
+
+#: menu-image.php:1171 menu-image.php:1191
+msgid "Remove"
+msgstr "Retirer"
+
+#: menu-image.php:1179
+msgid "Image on hover"
+msgstr "Image au survol"
+
+#: menu-image.php:1679
+msgid "Title position"
+msgstr "Position du titre"
+
+#: menu-image.php:1688
+msgid "Before"
+msgstr "Avant"
+
+#: menu-image.php:1689
+msgid "After"
+msgstr "Après"
+
+#: menu-image.php:1115
+msgid "Select"
+msgstr "Sélectionnez"
+
+#: menu-image.php:1756
+msgid "Original Size"
+msgstr "Taille originale"
+
+#: menu-image.php:1686
+msgid "Above"
+msgstr "Au dessus"
+
+#: menu-image.php:1687
+msgid "Below"
+msgstr "Au dessous"
+
+#. Plugin Name of the plugin
+msgid "Menu Image"
+msgstr "Image de menu"
+
+#: menu-image.php:1745
+msgid "Image size"
+msgstr "Taille de l’image"
+
+#: menu-image.php:1190
+msgid "Set image on hover"
+msgstr "Choisir l’image au survol"
+
+#: menu-image.php:1180
+msgid "Set menu item image on hover"
+msgstr "Choisir l’image au survol"
+
+#: menu-image.php:1180
+msgid "Change menu item image on hover"
+msgstr "Changer l’image au survol"
+
+#: menu-image.php:1160
+msgid "Change menu item image"
+msgstr "Changer l’image"
+
+#: menu-image.php:1685
+msgid "Hide"
+msgstr "Masquer"

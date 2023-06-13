@@ -1,0 +1,415 @@
+# Translation of Themes - Jaxon in French (France)
+# This file is distributed under the same license as the Themes - Jaxon package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-01-27 14:35:10+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.3\n"
+"Language: fr\n"
+"Project-Id-Version: Themes - Jaxon\n"
+
+#. Description of the theme
+#, gp-priority: high
+msgid "Jaxon is a contemporary, minimalistic theme that fully supports full-site-editing. Its versatility makes it suitable for a variety of purposes such as blogs, small businesses, startups, agencies, firms, e-commerce shops, personal portfolio sites, and more. It includes a selection of design patterns and multiple style options."
+msgstr "Jaxon est un thème contemporain et minimaliste qui prend entièrement en charge l’édition complète de site. Sa polyvalence le rend adapté à une variété de besoins tels que les blogs, les petites entreprises, les startups, les agences, les sociétés, les boutiques de commerce électronique, les sites de portfolio personnels, et plus encore. Il comprend une sélection de modèles de conception et de multiples options de style."
+
+#. Theme Name of the theme
+#, gp-priority: high
+msgid "Jaxon"
+msgstr "Jaxon"
+
+#: styles/sunset-orange.json
+msgctxt "Style variation name"
+msgid "Sunset Orange"
+msgstr "Coucher de soleil orange"
+
+#: styles/sherpa-blue.json
+msgctxt "Style variation name"
+msgid "Sherpa Blue"
+msgstr "Bleu sherpa"
+
+#: styles/sapphire.json
+msgctxt "Style variation name"
+msgid "Sapphire"
+msgstr "Saphir"
+
+#: styles/electric-violet.json
+msgctxt "Style variation name"
+msgid "Electric Violet"
+msgstr "Violet électrique"
+
+#: styles/blue-ribbon.json
+msgctxt "Style variation name"
+msgid "Blue Ribbon"
+msgstr "Ruban bleu"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Footer"
+msgstr "Pied de page"
+
+#: theme.json
+msgctxt "Template part name"
+msgid "Header"
+msgstr "En-tête"
+
+#: theme.json styles/blue-ribbon.json styles/electric-violet.json
+#: styles/sapphire.json styles/sherpa-blue.json styles/sunset-orange.json
+msgctxt "Color name"
+msgid "Accent"
+msgstr "Contraste"
+
+#: theme.json styles/blue-ribbon.json styles/electric-violet.json
+#: styles/sapphire.json styles/sherpa-blue.json styles/sunset-orange.json
+msgctxt "Color name"
+msgid "Foreground Alt"
+msgstr "Alt de premier plan"
+
+#: theme.json styles/blue-ribbon.json styles/electric-violet.json
+#: styles/sapphire.json styles/sherpa-blue.json styles/sunset-orange.json
+msgctxt "Color name"
+msgid "Background Dark"
+msgstr "Arrière-plan sombre"
+
+#: theme.json styles/blue-ribbon.json styles/electric-violet.json
+#: styles/sapphire.json styles/sherpa-blue.json styles/sunset-orange.json
+msgctxt "Color name"
+msgid "Background Alt"
+msgstr "Alt d’arrière-plan"
+
+#: theme.json styles/blue-ribbon.json styles/electric-violet.json
+#: styles/sapphire.json styles/sherpa-blue.json styles/sunset-orange.json
+msgctxt "Color name"
+msgid "Foreground"
+msgstr "Premier plan"
+
+#: theme.json styles/blue-ribbon.json styles/electric-violet.json
+#: styles/sapphire.json styles/sherpa-blue.json styles/sunset-orange.json
+msgctxt "Color name"
+msgid "Background"
+msgstr "Arrière-plan"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Lora"
+msgstr "Lora"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Outfit"
+msgstr "Habillage"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Figtree"
+msgstr "Figuier"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Source Serif Pro"
+msgstr "Source Serif Pro"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Readex Pro"
+msgstr "Readex Pro"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Huge"
+msgstr "Énorme"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra Large"
+msgstr "Très grand"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr "Grande"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Medium"
+msgstr "Moyenne"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Normal"
+msgstr "Normal"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr "Petite"
+
+#: inc/patterns/two-columns-with-testimonials.php
+msgctxt "Pattern title"
+msgid "Two columns with testimonials"
+msgstr "Deux colonnes avec des témoignages"
+
+#: inc/patterns/two-columns-with-images-and-text.php
+msgctxt "Pattern title"
+msgid "Two columns with images and text"
+msgstr "Deux colonnes avec des images et du texte"
+
+#: inc/patterns/three-columns-with-testimonials.php
+msgctxt "Pattern title"
+msgid "Three columns with testimonials"
+msgstr "Trois colonnes avec des témoignages"
+
+#: inc/patterns/three-columns-with-products.php
+msgctxt "Pattern title"
+msgid "Three columns with products"
+msgstr "Trois colonnes avec des produits"
+
+#: inc/patterns/row-with-logos.php
+msgctxt "Pattern title"
+msgid "Row with logos"
+msgstr "Ligne avec logos"
+
+#: inc/patterns/posts-in-a-three-column-grid.php
+msgctxt "Pattern title"
+msgid "Posts in a three column grid"
+msgstr "Articles dans une grille à trois colonnes"
+
+#: inc/patterns/hero-cover-with-title-and-image.php
+msgctxt "Pattern title"
+msgid "Hero cover with title and image"
+msgstr "Couverture Hero avec titre et bouton"
+
+#: inc/patterns/features-with-icons.php
+msgctxt "Pattern title"
+msgid "Features with icons"
+msgstr "Fonctionnalités avec icônes"
+
+#: inc/patterns/categories-with-description-and-images.php
+msgctxt "Pattern title"
+msgid "Categories with description and images"
+msgstr "Catégories avec description et images"
+
+#: inc/patterns/call-to-action-inverted.php
+msgctxt "Pattern title"
+msgid "Call to action inverted"
+msgstr "Appel à l’action inversé"
+
+#: inc/patterns/call-to-action-boxed.php
+msgctxt "Pattern title"
+msgid "Call to action boxed"
+msgstr "Appel à l’action encadré"
+
+#: inc/patterns/alternating-layout-with-image-and-description.php
+msgctxt "Pattern title"
+msgid "Alternating layout with image and description"
+msgstr "Mise en page alternée avec image et description"
+
+#: inc/patterns/two-columns-with-testimonials.php:28
+msgid "Selected client testimonials"
+msgstr "Témoignages de clients sélectionnés"
+
+#: inc/patterns/two-columns-with-testimonials.php:20
+msgid "Two columns with testimonials"
+msgstr "Deux colonnes avec des témoignages"
+
+#: inc/patterns/two-columns-with-images-and-text.php:46
+#: inc/patterns/two-columns-with-images-and-text.php:68
+msgid "Read more"
+msgstr "Lire la suite"
+
+#: inc/patterns/two-columns-with-images-and-text.php:25
+msgid "Product Reviews"
+msgstr "Avis de produit"
+
+#: inc/patterns/two-columns-with-images-and-text.php:20
+msgid "Two columns with images and text"
+msgstr "Deux colonnes avec des images et du texte"
+
+#: inc/patterns/three-columns-with-testimonials.php:26
+msgid "Clients Testimonials"
+msgstr "Témoignages de clients"
+
+#: inc/patterns/three-columns-with-testimonials.php:20
+msgid "Three columns with testimonials"
+msgstr "Trois colonnes avec des témoignages"
+
+#: inc/patterns/three-columns-with-products.php:92
+msgid "Buy Now"
+msgstr "Achetez maintenant"
+
+#: inc/patterns/three-columns-with-products.php:20
+msgid "Three columns with products"
+msgstr "Trois colonnes avec des produits"
+
+#: inc/patterns/row-with-logos.php:38
+msgid "Row with logos"
+msgstr "Ligne avec logos"
+
+#: inc/patterns/posts-in-a-three-column-grid.php:35
+msgid "No Posts were found"
+msgstr "Aucun article n’a été trouvé"
+
+#: inc/patterns/posts-in-a-three-column-grid.php:21
+msgid "Latest Posts"
+msgstr "Derniers articles"
+
+#: inc/patterns/posts-in-a-three-column-grid.php:16
+msgid "Posts in a three column grid"
+msgstr "Articles dans une grille à trois colonnes"
+
+#: inc/patterns/hero-cover-with-title-and-image.php:39
+msgid "This is a button"
+msgstr "Ceci est un bouton"
+
+#: inc/patterns/hero-cover-with-title-and-image.php:19
+msgid "Hero cover with title and button"
+msgstr "Couverture Hero avec titre et bouton"
+
+#: inc/patterns/features-with-icons.php:59
+msgid "Warranty"
+msgstr "Garantie"
+
+#: inc/patterns/features-with-icons.php:45
+msgid "High Quality"
+msgstr "Haute qualité"
+
+#: inc/patterns/features-with-icons.php:31
+msgid "Fast Delivery"
+msgstr "Livraison rapide"
+
+#: inc/patterns/features-with-icons.php:18
+msgid "Features with icons"
+msgstr "Fonctionnalités avec icônes"
+
+#: inc/patterns/categories-with-description-and-images.php:80
+msgid "Blouses"
+msgstr "Blouses"
+
+#: inc/patterns/categories-with-description-and-images.php:68
+msgid "Winter"
+msgstr "Hiver"
+
+#: inc/patterns/categories-with-description-and-images.php:56
+msgid "Casual"
+msgstr "Normal"
+
+#: inc/patterns/categories-with-description-and-images.php:44
+msgid "Elegant"
+msgstr "Élégant"
+
+#: inc/patterns/categories-with-description-and-images.php:25
+msgid "Popular Categories"
+msgstr "Catégories populaires"
+
+#: inc/patterns/categories-with-description-and-images.php:18
+msgid "Categories with description and images"
+msgstr "Catégories avec description et images"
+
+#: inc/patterns/call-to-action-inverted.php:16
+msgid "Call to action inverted"
+msgstr "Appel à l’action inversé"
+
+#: inc/patterns/call-to-action-boxed.php:31
+msgid "Shop now"
+msgstr "Acheter maintenant"
+
+#: inc/patterns/call-to-action-boxed.php:16
+msgid "Call to action boxed"
+msgstr "Appel à l’action encadré"
+
+#: inc/patterns/alternating-layout-with-image-and-description.php:40
+#: inc/patterns/alternating-layout-with-image-and-description.php:78
+#: inc/patterns/call-to-action-inverted.php:26
+msgid "Shop Now"
+msgstr "Acheter maintenant"
+
+#: inc/patterns/alternating-layout-with-image-and-description.php:31
+#: inc/patterns/alternating-layout-with-image-and-description.php:69
+#: inc/patterns/three-columns-with-products.php:31
+#: inc/patterns/three-columns-with-products.php:55
+#: inc/patterns/three-columns-with-products.php:79
+msgid "Product Name"
+msgstr "Nom du produit"
+
+#: inc/patterns/alternating-layout-with-image-and-description.php:20
+msgid "Alternating layout with image and description"
+msgstr "Mise en page alternée avec image et description"
+
+#: inc/Core.php:90
+msgid "Primary Menu"
+msgstr "Menu principal"
+
+#: inc/Block_Patterns.php:62
+msgid "Jaxon Patterns"
+msgstr "Compositions Jaxon"
+
+#: inc/Admin.php:105
+msgid "Learn More"
+msgstr "En savoir plus"
+
+#. translators: %s: Otter Blocks
+#: inc/Admin.php:100
+msgid "Install & Activate %s"
+msgstr "Installer et activer %s"
+
+#. translators: %s: Otter Blocks
+#: inc/Admin.php:98
+msgid "Activate %s"
+msgstr "Activation de %s"
+
+#: inc/Admin.php:88
+msgid "Otter is a Gutenberg Blocks page builder plugin that adds extra functionality to the WordPress Block Editor (also known as Gutenberg) for a better page building experience without the need for traditional page builders."
+msgstr "Otter est un extension de constructeur de pages Gutenberg Blocks qui ajoute des fonctionnalités supplémentaires à l’éditeur de blocs WordPress (également connu sous le nom de Gutenberg) pour une meilleure expérience de construction de pages sans avoir besoin de constructeurs de pages traditionnels."
+
+#. translators: %s: Otter Blocks
+#: inc/Admin.php:84
+msgid "Power up your website building experience with %s!"
+msgstr "Améliorez votre expérience de création de sites avec %s !"
+
+#: inc/Admin.php:78
+msgid "Otter Blocks preview"
+msgstr "Prévisualisation des blocs Otter"
+
+#: inc/Admin.php:70
+msgid "Done"
+msgstr "Terminé"
+
+#: inc/Admin.php:69
+msgid "Installing"
+msgstr "Installation"
+
+#: inc/Admin.php:68
+msgid "Activating"
+msgstr "Activation"
+
+#. translators: %s: commands to run the theme
+#: functions.php:105
+msgid "You appear to be running the Jaxon theme from source code. Please finish installation by running %s."
+msgstr "Vous semblez exécuter le thème Jaxon à partir du code source. Veuillez terminer l’installation en exécutant %s."
+
+#: functions.php:57
+msgid "upgrading PHP to the latest version"
+msgstr "mise à niveau de PHP vers la dernière version"
+
+#. translators: %s message to upgrade PHP to the latest version
+#: functions.php:53
+msgid "Hey, we've noticed that you're running an outdated version of PHP which is no longer supported. Make sure your site is fast and secure, by %1$s. Jaxon's minimal requirement is PHP%2$s."
+msgstr "Bonjour, nous avons remarqué que vous utilisez une version obsolète de PHP qui n’est plus prise en charge. Assurez-vous que votre site est rapide et sécurisé, en %1$s. La version minimale nécessaire pour Jaxon est PHP %2$s."
+
+#. Author URI of the theme
+#, gp-priority: low
+msgid "https://themeisle.com"
+msgstr "https://themeisle.com"
+
+#. Author of the theme
+#, gp-priority: low
+msgid "ThemeIsle"
+msgstr "Themeisle"
+
+#. Theme URI of the theme
+#, gp-priority: low
+msgid "https://themeisle.com/themes/jaxon/"
+msgstr "https://themeisle.com/themes/jaxon/"
